@@ -15,8 +15,8 @@ export const resolvers = {
         },
         logUserOut: (_, __, {cache}) => {
             localStorage.removeItem("token");
-            window.location.reload();   //모든 캐시를 없애기를 원해
+            window.location = "/";   //모든 캐시를 없애기를 원해
             return null;
         }
     }
-}
+};

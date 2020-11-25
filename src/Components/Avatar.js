@@ -25,11 +25,24 @@ const Container = styled.div`
     border-radius:50%;
 `;
 
-const Avatar = ({size="sm", url}) => <Container size={size} url={url} />;
+const Avatar = ({size="sm", url, className}) => {
+    if(url === null || undefined) {
+        url = "https://pbs.twimg.com/media/EUjPBqAU0AAIwgB.jpg";
+    }
+    
+    return(
+        <Container 
+            size={size} 
+            url={url} 
+            className={className} 
+        />
+    )
+};
+
 
 Avatar.propTypes = {
     size: PropTypes.oneOf(["sm","md","lg"]),
-    url: PropTypes.string.isRequired
+    url: PropTypes.string
 };
 
 export default Avatar;
